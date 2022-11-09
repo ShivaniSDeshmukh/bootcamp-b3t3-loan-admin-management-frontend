@@ -8,6 +8,7 @@ import CustomerDataManagement from './pages/customer_data_management';
 import Login from './pages/login';
 import ItemsMasterData from './pages/items_master_data';
 import DisplayLoanCard from './pages/DisplayLoanCard';
+import EditLoanCard from './pages/EditLoanCard';
 function App() {
  
   return (
@@ -23,6 +24,8 @@ function App() {
         <Route path = "login" element = {<Login/>}/>
         <Route path = "" element = {<Login/>}/>
          <Route path = "addLoanCard" element = {<LoanCardManagement/>}/>
+         <Route path = "editLoanCard" element = {<EditLoanCard/>}/>
+
       </Routes>
     </BrowserRouter>
     

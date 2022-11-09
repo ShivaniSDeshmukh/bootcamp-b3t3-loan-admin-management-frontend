@@ -3,6 +3,7 @@ import React from "react"
 import { DisplayCardAPI } from '../services/LoginService';
 import { DeleteCardAPI } from '../services/LoginService';
 import {Routes,Route,useNavigate} from 'react-router-dom'
+import EditLoanCard from "./EditLoanCard";
 
 class DisplayLoanCard extends React.Component{
 
@@ -30,7 +31,7 @@ class DisplayLoanCard extends React.Component{
             <td>{item.loan_type}</td>
             <td>{item.duration_in_years}</td>
             <td>
-                <button  className ="btn btn-outline-primary btn-sm">
+                <button  className ="btn btn-outline-primary btn-sm" onClick={(item)=>window.location.href='/EditLoanCard'}>
                     Edit
                 </button>
             </td>
@@ -82,7 +83,7 @@ class DisplayLoanCard extends React.Component{
             }}>
             <button  className ="btn btn-outline-success btn-sm" onClick={(e)=>window.location.href='/addLoanCard'}>
                     Add Card
-                </button>
+            </button>
             </div>
             </div>
         )

@@ -24,6 +24,7 @@ export default function Login() {
                 "username" : username,
                 "password" : password
             }
+            
             tryLogin(data)
                 .then(response => {
                     if(response.authenticated == "yes"){
