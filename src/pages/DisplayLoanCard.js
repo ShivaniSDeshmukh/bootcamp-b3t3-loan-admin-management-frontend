@@ -18,7 +18,12 @@ class DisplayLoanCard extends React.Component{
         });
     }
 
-
+    parsefunc=(item)=>
+    {
+        localStorage.setItem('item',JSON.stringify(item));
+        console.log(item);
+        window.location.href='/EditLoanCard';
+    }
     delete = (id)=>{
         DeleteCardAPI(id);
         window.location.reload(false);
@@ -26,17 +31,17 @@ class DisplayLoanCard extends React.Component{
 
     render(){
         let tb = this.state.list.map((item)=>{return (
-        <tr>
-            <td>{item.loan_id}</td>
-            <td>{item.loan_type}</td>
-            <td>{item.duration_in_years}</td>
-            <td>
-                <button  className ="btn btn-outline-primary btn-sm" onClick={(item)=>window.location.href='/EditLoanCard'}>
+        < tr id="tr">
+            <td id = "tid">{item.loan_id}</td>
+            <td id = "ttype">{item.loan_type}</td>
+            <td id="tdur">{item.duration_in_years}</td>
+            <td id="button1">
+                <button  className ="btn btn-outline-primary btn-sm" id="button1" onClick={() => this.parsefunc(item)}>
                     Edit
                 </button>
             </td>
-            <td>
-                <button  className ="btn btn-outline-danger btn-sm" onClick={()=>this.delete(item.loan_id)}>
+            <td id="button2">
+                <button  className ="btn btn-outline-danger btn-sm" id="button21" onClick={()=>this.delete(item.loan_id)}>
                     Delete
                 </button>
             </td>
